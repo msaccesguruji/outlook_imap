@@ -50,7 +50,7 @@ def search():
     results = []
 
     try:
-        mail = imaplib.IMAP4_SSL('outlook.office365.com')
+        mail = imaplib.IMAP4_SSL('outlook.office365.com', 993)
         mail.login(email_addr, password)
         mail.select('inbox')
         typ, data_ids = mail.search(None, 'ALL')
